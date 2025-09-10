@@ -1,2 +1,2 @@
 println("HelloWorld");
-println("ijustwantedtobecool");
+println("I just wanted to be cool.");
