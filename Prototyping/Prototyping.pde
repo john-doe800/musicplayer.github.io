@@ -2,7 +2,7 @@ println("HelloWorld");
 println("I just wanted to be cool.");
 
   fullScreen(); // screen
-  background(#000000); // color
+  background(#808080); // color
 
 // rect(x,y,w,h);
 
@@ -17,7 +17,7 @@ rect(1850,250,50.23,50); // x button
 // selection
 
 
-// music buttons
+// music buttons + progress bar
 rect(58.5,900,1800,400); // outer rectangle
 rect(85,930,1750,140); // inner rectangle
 rect(1808,900,50.5,30); // x button
@@ -29,3 +29,9 @@ rect(970,980,110,80); // play button
 rect(850,980,110,80); // pause button
 rect(730,980,110,80); // rewind button
 rect(610,980,110,80); // previous song
+rect(100,980,110,80); // volume up
+rect(220,980,110,80); // volume down 
+
+rect(1350,85,420,130); // title
+
+rect(1768,0,150,70); // x button
