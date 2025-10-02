@@ -25,7 +25,7 @@ rect(95,950,1730,20); // progress bar
 
 rect(1210,980,110,80); // next song
 rect(1090,980,110,80); // fast forwards button
-//rect(970,980,110,80); // play button
+rect(970,980,110,80); // play button
 triangle(970,980,970,1060,1050,1020);
 //triangle(x1,y1,x2,y2,x3,y3);
 //rect(x,y,w,h);
