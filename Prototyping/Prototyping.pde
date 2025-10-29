@@ -1,40 +1,87 @@
-println("HelloWorld");
-println("I just wanted to be cool.");
+int divW = 1920;
+int divH = 1080;
 
-  fullScreen(); // screen
-  background(#808080); // color
+int appWidth, appHeight;
 
-// rect(x,y,w,h);
+void setup() {
+  fullScreen();
+  noLoop();
+  
+  appWidth = displayWidth;
+  appHeight = displayHeight;
+}
 
-rect(85.67,100.46,502.3,602.76);
-rect(135.90,150.69,401.84,492.25);
-rect(537,100.69,50.23,50.23); // x button 
-// images + x button
+void draw() {
+  background(128);
 
-rect(1250,250,650,420); // outer rectangle
-rect(1300,300,550,330); // inner rectangle
-rect(1850,250,50.23,50); // x button
-// selection
+  // Images + X button
+  rect(appWidth * (85.67f / divW), appHeight * (100.46f / divH), appWidth * (502.3f / divW), appHeight * (602.76f / divH));
+  rect(appWidth * (135.90f / divW), appHeight * (150.69f / divH), appWidth * (401.84f / divW), appHeight * (492.25f / divH));
+  rect(appWidth * (537f / divW), appHeight * (100.69f / divH), appWidth * (50.23f / divW), appHeight * (50.23f / divH)); // X button
 
+  // Selection rectangles + X button
+  rect(appWidth * (1250f / divW), appHeight * (250f / divH), appWidth * (650f / divW), appHeight * (420f / divH)); // outer rect
+  rect(appWidth * (1300f / divW), appHeight * (300f / divH), appWidth * (550f / divW), appHeight * (330f / divH)); // inner rect
+  rect(appWidth * (1850f / divW), appHeight * (250f / divH), appWidth * (50.23f / divW), appHeight * (50f / divH)); // X button
 
-// music buttons + progress bar
-rect(58.5,900,1800,400); // outer rectangle
-rect(85,930,1750,140); // inner rectangle
-rect(1808,900,50.5,30); // x button
-rect(95,950,1730,20); // progress bar
+  // Music buttons + progress bar
+  rect(appWidth * (58.5f / divW), appHeight * (900f / divH), appWidth * (1800f / divW), appHeight * (400f / divH)); // outer rect
+  rect(appWidth * (85f / divW), appHeight * (930f / divH), appWidth * (1750f / divW), appHeight * (140f / divH)); // inner rect
+  rect(appWidth * (1808f / divW), appHeight * (900f / divH), appWidth * (50.5f / divW), appHeight * (30f / divH)); // X button
+  rect(appWidth * (95f / divW), appHeight * (950f / divH), appWidth * (1730f / divW), appHeight * (20f / divH)); // progress bar
 
-rect(1210,980,110,80); // next song
-rect(1090,980,110,80); // fast forwards button
-rect(970,980,110,80); // play button
-triangle(970,980,970,1060,1050,1020);
-//triangle(x1,y1,x2,y2,x3,y3);
-//rect(x,y,w,h);
-rect(850,980,110,80); // pause button
-rect(730,980,110,80); // rewind button
-rect(610,980,110,80); // previous song
-rect(100,980,110,80); // volume up
-rect(220,980,110,80); // volume down 
+  // Play button rectangle
+  float playX = appWidth * (970f / divW);
+  float playY = appHeight * (980f / divH);
+  float btnW = appWidth * (90f / divW);
+  float btnH = appHeight * (80f / divH);
+  rect(playX, playY, btnW, btnH);
 
-rect(1350,85,420,130); // title
+  float triX1 = playX + btnW * 1/4f;
+  float triY1 = playY + btnH * 1/4f;
+  float triX2 = playX + btnW * 3/4f;
+  float triY2 = playY + btnH * 1/2f;
+  float triX3 = playX + btnW * 1/4f;
+  float triY3 = playY + btnH * 3/4;
+  triangle(triX1, triY1, triX2, triY2, triX3, triY3);
 
-rect(1768,0,150,70); // x button
+float btnW = appWidth * (90f / divW);
+float btnH = appHeight * (80f / divH);
+float btnY = appHeight * (980f / divH);  // same vertical position as play button
+
+// Position the fast forward button a bit to the right of play button
+float ffwdX = appWidth * (1090f / divW);
+
+// first triangle
+float tri1X1 = ffwdX + btnW * 0.2f;
+float tri1Y1 = btnY + btnH * 0.25f;
+
+float tri1X2 = ffwdX + btnW * 0.5f;
+float tri1Y2 = btnY + btnH * 0.5f;
+
+float tri1X3 = ffwdX + btnW * 0.2f;
+float tri1Y3 = btnY + btnH * 0.75f;
+
+triangle(tri1X1, tri1Y1, tri1X2, tri1Y2, tri1X3, tri1Y3);
+
+// second triangle (slightly to the right)
+float tri2X1 = ffwdX + btnW * 0.5f;
+float tri2Y1 = btnY + btnH * 0.25f;
+
+float tri2X2 = ffwdX + btnW * 0.8f;
+float tri2Y2 = btnY + btnH * 0.5f;
+
+float tri2X3 = ffwdX + btnW * 0.5f;
+float tri2Y3 = btnY + btnH * 0.75f;
+
+  rect(appWidth * (1210f / divW), appHeight * (980f / divH), btnW, btnH); // next song
+  rect(appWidth * (1090f / divW), appHeight * (980f / divH), btnW, btnH); // fast forward
+  rect(appWidth * (850f / divW), appHeight * (980f / divH), btnW, btnH);  // pause
+  rect(appWidth * (730f / divW), appHeight * (980f / divH), btnW, btnH);  // rewind
+  rect(appWidth * (610f / divW), appHeight * (980f / divH), btnW, btnH);  // previous song
+  rect(appWidth * (100f / divW), appHeight * (980f / divH), btnW, btnH);  // volume up
+  rect(appWidth * (220f / divW), appHeight * (980f / divH), btnW, btnH);  // volume down
+
+  rect(appWidth * (1350f / divW), appHeight * (85f / divH), appWidth * (420f / divW), appHeight * (130f / divH)); // title
+  rect(appWidth * (1768f / divW), appHeight * (0f / divH), appWidth * (150f / divW), appHeight * (70f / divH)); // X button
+}
