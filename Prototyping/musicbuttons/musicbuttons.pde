@@ -1,3 +1,7 @@
+fullScreen();
+noLoop();
+background(225,225,225); //rgb
+
 rect(1210,980,110,80); // next song
 triangle(1210,980,1210,1060,1250,1020);
 rect(1250,980,30,80);
