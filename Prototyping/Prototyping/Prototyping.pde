@@ -1,54 +1,46 @@
-fullScreen();
-noLoop();
-background(235, 232, 185); //rgb
+/* DIVs: 2D Rectangles
+*/
+//
+fullScreen(); //dispalyWidth //displayHeight
+println(displayWidth, displayHeight);
+int appWidth = displayWidth; //Best Practice with Key Variables
+int appHeight = displayHeight;
 
-rect(85.67,100.46,502.3,602.76);
-rect(135.90,150.69,401.84,492.25);
-// images 
-
-rect(1250,250,650,420); // outer rectangle
-rect(1300,300,550,330); // inner rectangle
-// selection
-
-
-// music buttons + progress bar
-rect(58.5,900,1800,200); // outer rectangle
-rect(85,930,1750,140); // inner rectangle
-rect(95,950,1730,20); // progress bar
-
-rect(1210,980,110,80); // next song
-triangle(1210,980,1210,1060,1250,1020);
-rect(1250,980,30,80);
-
-rect(1090,980,110,80); // fast forwards button
-triangle(1090,980,1090,1060,1130,1020); //first triangle
-triangle(1130,980,1130,1060,1170,1020); // second triangle
-
-rect(970,980,110,80); // play button
-triangle(970,980,970,1060,1040,1020);
-
-//triangle(x1,y1,x2,y2,x3,y3);
-//rect(x,y,w,h);
-
-rect(850,980,110,80); // pause button
-rect(860,980,30,80); 
-rect(900,980,30,80);
-
-rect(730,980,110,80); // rewind button
-triangle(770,980,770,1060,730,1020);
-triangle(810,980,810,1060,770,1020);
-
-rect(610,980,110,80); // previous song
-rect(620,980,30,80);
-triangle(690,980,690,1060,650,1020);
-
-rect(100,980,110,80); // volume up
-triangle(110,1050,190,1050,150,1000);
-
-rect(220,980,110,80); // volume down 
-triangle(230,1000,310,1000,270,1050);
-
-
-rect(1350,85,420,130); // title
-
-rect(1768,0,150,70); // x button
+//image
+float divX = appWidth * 2.9/27.9;
+float divY = appHeight * 2/21.6;
+float divWidth = appWidth * 10/27.9;
+float divHeight = appHeight * 12/21.6;
+//
+//Ruler action of numbers, verify by changing ratio numbers from GUI DIVs
+//Paperfolding action of ratios, never changes
+//Order of Operations: ruler + paperfolding = correct location
+float stopX = divX + divWidth * 1/4;
+float stopY = divY + divHeight * 1/4;;
+float stopWidth = divWidth * 2/4; //1/2
+float stopHeight = divHeight * 1/2;
+float mute1X1 = stopX;
+float mute1Y1 = stopY;
+float mute2X2 = mute1X1 + stopWidth;
+float mute2Y2 = mute1Y1 + stopHeight;
+float mute3X1 = mute2X2;
+float mute3Y1 = mute1Y1;
+float mute4X2 = mute1X1; //Cascading Varibles v one-reference
+float mute4Y2 = mute2Y2;
+float playX1 = divX + divWidth * 1/4; 
+float playY1 = divY + divHeight * 1/4;
+float playX2 = divX + divWidth * 3/4;
+float playY2 = divY + divHeight * 1/2;
+float playX3 = divX + divWidth * 1/4;
+float playY3 = divY + divHeight * 3/4;
+//
+//DIVs: for human confirmation of formulaic and variable accuracy
+rect(divX, divY, divWidth, divHeight); ////Group of Variables
+//
+//Library of Symbols, requires DIVs
+rect(stopX, stopY, stopWidth, stopHeight);
+//triangle(playX1, playY1, playX2, playY2, playX3, playY3); //Group of Variables
+float divX = appWidth * 13.3/27.9;
+float divY = appHeight * 19.4/21.6;
+float divWidth = appWidth * 1/27.9;
+float divHeight = appHeight * 2/21.6;
