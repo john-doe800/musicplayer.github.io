@@ -1,5 +1,5 @@
 # Music Player
-the WORST music EVER
+the WORST music player EVER
 
 # To Do List
 - [x] Create To Do List in Markdown
