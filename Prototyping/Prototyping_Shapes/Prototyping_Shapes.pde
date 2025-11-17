@@ -1,4 +1,3 @@
-
 /* DIVs 2D Rectangles
 - Step One: nameing the rectangles by referencing the variables
 - Writing a computer program backwards from an object
