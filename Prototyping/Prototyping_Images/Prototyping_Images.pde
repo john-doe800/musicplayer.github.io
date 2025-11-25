@@ -18,7 +18,7 @@ float imageDivHeight = appHeight*8/21.5;
 //Image Aspect Ratio Vars & Algorithm
 //Directory or Pathway, Concatenation
 String upArrow = "../../";
-String folder = "Test Image"; //
+String folder = "Test Image"; //aWkward
 String oldman = "oldman";
 String fileExtensionPNG = ".png";
 String imagePathway1 = upArrow + folder + oldman + fileExtensionPNG;
@@ -28,11 +28,11 @@ PImage image1 = loadImage( imagePathway1 );
 int imageWidth1 = 2800; //Hardcoded
 int imageHeight1 = 3500; //Hardcoded
 //Aspect Ratio
-float image1AspectRatio_SmallerOne = ( imageHeight1 >= imageWidth1 ) ? imageHeight1/imageWidth1 : imageWidth1/imageHeight1 ; //Ternary Operator
+float image1AspectRatio_LesserOne = ( imageWidth1 >= imageHeight1 ) ? float(imageWidth1)/float(imageHeight1) : float(imageHeight1)/float(imageWidth1) ; //Ternary Operator
 //Hardcoded Greater-Than-One Aspect Ratio
 //
 //DIV
 rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
 //
-image( image1, imageDivX, imageDivY, imageWidthAdjusted, imageHeightAdjusted );
+image( image1, imageDivX, imageDivY);
 //image( image1, imageDivX, imageDivY, imageWidthAdjusted, imageHeightAdjusted );
