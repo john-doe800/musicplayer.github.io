@@ -20,9 +20,24 @@ String title = "Wahoo!";
  - When a String just fits the height aspect ratio is the largest, sometimes >1
  - Fonts differs in WHITE SPACE around the foreground "coloured ink"
  */
- // Students enter all text from Case Study
+// Students enter all text from Case Study
+
+/*Fonts from OS
+ println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
+ String[] fontList = PFont.list(); //To list all fonts available on system
+ printArray(fontList); //For listing all possible fonts to choose, then createFont
+ */
+float fontSize = 116; //Entire Program
+PFont titleFont;
+String Consolas = "Consolas"; //Spelling of the Font Matters
+titleFont = createFont (Consolas, fontSize);
+//textFont() has option to combine font declaration with textSize()
+//Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
 //
 //Note: DIV to "see" variables
 rect( stringDivX, stringDivY, stringDivWidth, stringDivHeight );
 //
+color redInk = #D31C34; //hexidecimal
+fill(redInk); 
+textFont (titleFont,fontSize);
 text( title, stringDivX, stringDivY, stringDivWidth, stringDivHeight );
