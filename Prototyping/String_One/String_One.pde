@@ -53,7 +53,15 @@ println(); //skip a line
 //Note: DIV to "see" variables
 rect( stringDivX, stringDivY, stringDivWidth, stringDivHeight );
 //
-color redInk = #D31C34; //hexidecimal
-fill(redInk); 
+color redInk = #D31C34; 
+color whiteInk = #FFFFFF;
+color resetInk = whiteInk;
+fill(redInk); //hexidecimal
+//
+textAlign (CENTER, CENTER);
+//
 textFont (titleFont,fontSize);
+//
 text( title, stringDivX, stringDivY, stringDivWidth, stringDivHeight );
+fill (resetInk);
+// end program
