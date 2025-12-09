@@ -15,7 +15,7 @@ float stringDivY = appHeight*1/10;
 float stringDivWidth = appWidth*1/2;
 float stringDivHeight = appHeight*1/10; 
 //Strings, Text, Literal
-String title = "Wahoo!";
+String title = "this is green.";
 /* Full String longer than Rectangle,  "Wahoo! I changed 2D Size."
  - When a String just fits the height aspect ratio is the largest, sometimes >1
  - Fonts differs in WHITE SPACE around the foreground "coloured ink"
@@ -27,13 +27,29 @@ String title = "Wahoo!";
  String[] fontList = PFont.list(); //To list all fonts available on system
  printArray(fontList); //For listing all possible fonts to choose, then createFont
  */
-float fontSize = 116; //Entire Program
+float fontSize = appHeight; //Entire Program
 PFont titleFont;
 String Consolas = "Consolas"; //Spelling of the Font Matters
 titleFont = createFont (Consolas, fontSize);
+//
+println(fontSize, Consolas, titleFont);
+/*Fonts from OS
+ println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
+ String[] fontList = PFont.list(); 
+ To list all fonts available on system
+ printArray(fontList); 
+ For listing all possible fonts to choose, then createFont
+ Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
+ Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
+*/
+float fontSizeConsolas = 87.0; //this is the biggest font size 
 //textFont() has option to combine font declaration with textSize()
 //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
-//
+// 
+float ConsolasAspectRatio = fontSizeConsolas / stringDivHeight;
+fontSize = stringDivHeight*ConsolasAspectRatio;
+println("Consolas Aspect Ratio", ConsolasAspectRatio);
+println(); //skip a line
 //Note: DIV to "see" variables
 rect( stringDivX, stringDivY, stringDivWidth, stringDivHeight );
 //
