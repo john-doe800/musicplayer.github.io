@@ -58,7 +58,7 @@ color whiteInk = #FFFFFF;
 color resetInk = whiteInk;
 fill(redInk); //hexidecimal
 //
-textAlign (CENTER, CENTER);
+textAlign (CENTER, TOP);
 //
 textFont (titleFont,fontSize);
 //
