@@ -13,6 +13,7 @@ float stringDivX1 = appWidth*1/4;
 float stringDivY1 = appHeight*1/10;
 float stringDivWidth1 = appWidth*1/2;
 float stringDivHeight1 = appHeight*1/10; 
+//
 //Strings, Text, Literal
 String title = "this is green.";
 /* Full String longer than Rectangle,  "Wahoo! I changed 2D Size."
@@ -67,8 +68,6 @@ float constantDecrease = 0.99; //99% of original or 1% decrease
   //ERROR ifninite loop, requires exit() and println
   fontSize *= constantDecrease;
   textFont (titleFont,fontSize);
-
-
 //WHILE Error Check
 //textFont() has option to combine font declaration with textSize()
 //textFont() is better for more than one PFont Variable
