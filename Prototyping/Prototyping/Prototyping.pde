@@ -13,12 +13,12 @@ float imageboxHeight = appHeight * 1/2;
 rect(imageboxX, imageboxY, imageboxWidth, imageboxHeight); 
 //
 
-//music selection box
-float selectionX = appWidth * 3.1/5;
-float selectionY = appHeight * 1/5;
-float selectionWidth = appWidth * 1.5/4;
-float selectionHeight = appHeight * 1/3;
-rect(selectionX, selectionY, selectionWidth, selectionHeight);
+//music np box
+float np = appWidth * 3.1/5;
+float npY = appHeight * 1/5;
+float npWidth = appWidth * 1.5/4;
+float npHeight = appHeight * 1/3;
+rect(np, npY, npWidth, npHeight);
 
 //title box
 float titleX = appWidth * 3.4/5;
