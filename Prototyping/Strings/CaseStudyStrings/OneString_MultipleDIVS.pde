@@ -5,16 +5,11 @@ int appHeight = displayHeight; //height
 //Population
 float titleDivX1 = appWidth*1/4; 
 float titleDiv1 = appHeight*1/10;
-float stringDivWidth1 = appWidth*1/2;
-float stringDivHeight1 = appHeight*1/10; 
+float titleDivWidth1 = appWidth*1/2;
+float titleDivHeight1 = appHeight*1/10; 
 //
 //Strings, Text, Literal
-String title = "this is green.";
-/* Full String longer than Rectangle,  "Wahoo! I changed 2D Size."
- - When a String just fits the height aspect ratio is the largest, sometimes >1
- - Fonts differs in WHITE SPACE around the foreground "coloured ink"
- */
-// Students enter all text from Case Study
+String title = "music player";
 
 /*Fonts from OS
  println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
@@ -23,10 +18,10 @@ String title = "this is green.";
  */
 float fontSize = appHeight; //Entire Program
 PFont titleFont;
-String Consolas = "Consolas"; //Spelling of the Font Matters
-titleFont = createFont (Consolas, fontSize);
+String font = "8bitoperator-JVE"; //Spelling of the Font Matters
+titleFont = createFont (font, fontSize);
 //
-println(fontSize, Consolas, titleFont);
+println(fontSize, font, titleFont);
 /*Fonts from OS
  println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
  String[] fontList = PFont.list(); 
@@ -36,16 +31,16 @@ println(fontSize, Consolas, titleFont);
  Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
  Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
 */
-float fontSizeConsolas = 87.0; //this is the biggest font size 
+float fontSizefont = 87.0; //this is the biggest font size 
 //textFont() has option to combine font declaration with textSize()
 //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
 // 
-float ConsolasAspectRatio = fontSizeConsolas / stringDivHeight1;
-fontSize = stringDivHeight1*ConsolasAspectRatio;
-println("Consolas Aspect Ratio", ConsolasAspectRatio);
+float fontAspectRatio = fontSizefont / titleDivHeight1;
+fontSize = titleDivHeight1*fontAspectRatio;
+println("font Aspect Ratio", fontAspectRatio);
 println(); //skip a line
 //Note: DIV to "see" variables
-rect( stringDivX1, titleDiv1, stringDivWidth1, stringDivHeight1 );
+rect( titleDivX1, titleDiv1, titleDivWidth1, titleDivHeight1 );
 //
 color redInk = #D31C34; 
 color whiteInk = #FFFFFF;
@@ -66,6 +61,6 @@ float constantDecrease = 0.99; //99% of original or 1% decrease
 //textFont() has option to combine font declaration with textSize()
 //textFont() is better for more than one PFont Variable
 //
-text( title, stringDivX1, titleDiv1, stringDivWidth1, stringDivHeight1 );
+text( title, titleDivX1, titleDiv1, titleDivWidth1, titleDivHeight1 );
 fill (resetInk);
 // end program
