@@ -1,31 +1,41 @@
 fullScreen();
-background(235, 232, 185); 
-fullScreen(); //displayWidth //displayHeight
-println(displayWidth, displayHeight);
-int appWidth = displayWidth; 
-int appHeight = displayHeight;
+int appWidth = displayWidth; //width
+int appHeight = displayHeight; //height
+
+//Population
+float titleDivX1 = appWidth*1/4; 
+float titleDiv1 = appHeight*1/10;
+float stringDivWidth1 = appWidth*1/2;
+float stringDivHeight1 = appHeight*1/10; 
 //
-//DIV 1
-float np = appWidth * 3.1/5;
-float npY = appHeight * 1/5;
-float npWidth = appWidth * 1.5/4;
-float npHeight = appHeight * 1/3;
-rect(np, npY, npWidth, npHeight);
-//
-//DIV 2
-float titleX = appWidth * 3.4/5;
-float titleY = appHeight * 1/15;
-float titleWidth = appWidth * 1.5/6;
-float titleHeight = appHeight * 1/10;
-//
-String title = "music player";
-//
-float fontSize = appHeight;
+//Strings, Text, Literal
+String title = "this is green.";
+/* Full String longer than Rectangle,  "Wahoo! I changed 2D Size."
+ - When a String just fits the height aspect ratio is the largest, sometimes >1
+ - Fonts differs in WHITE SPACE around the foreground "coloured ink"
+ */
+// Students enter all text from Case Study
+
+/*Fonts from OS
+ println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
+ String[] fontList = PFont.list(); //To list all fonts available on system
+ printArray(fontList); //For listing all possible fonts to choose, then createFont
+ */
+float fontSize = appHeight; //Entire Program
 PFont titleFont;
-String operator = "8bitOperator-JVE";
-titleFont = createFont (operator, fontSize);
+String Consolas = "Consolas"; //Spelling of the Font Matters
+titleFont = createFont (Consolas, fontSize);
 //
-println(fontSize, operator, titleFont);
+println(fontSize, Consolas, titleFont);
+/*Fonts from OS
+ println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
+ String[] fontList = PFont.list(); 
+ To list all fonts available on system
+ printArray(fontList); 
+ For listing all possible fonts to choose, then createFont
+ Spelling Counts and must compare CONSOLE v Tools / Create Font / Create Font Spelling
+ Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
+*/
 float fontSizeConsolas = 87.0; //this is the biggest font size 
 //textFont() has option to combine font declaration with textSize()
 //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
@@ -35,25 +45,27 @@ fontSize = stringDivHeight1*ConsolasAspectRatio;
 println("Consolas Aspect Ratio", ConsolasAspectRatio);
 println(); //skip a line
 //Note: DIV to "see" variables
-rect( stringDivX1, stringDivY1, stringDivWidth1, stringDivHeight1 );
+rect( stringDivX1, titleDiv1, stringDivWidth1, stringDivHeight1 );
 //
-
+color redInk = #D31C34; 
 color whiteInk = #FFFFFF;
-fill(whiteInk); 
-
+color resetInk = whiteInk;
+fill(redInk); //hexidecimal
+//
 textAlign (CENTER, TOP);
+//
+//Drawing text
+//ERROR check fontSize, decreasing the text when wraped or not shown
 textFont (titleFont,fontSize);
 float constantDecrease = 0.99; //99% of original or 1% decrease
-
+  //end WHILE error check text wrap
+  //ERROR ifninite loop, requires exit() and println
   fontSize *= constantDecrease;
   textFont (titleFont,fontSize);
-text( title, stringDivX1, stringDivY1, stringDivWidth1, stringDivHeight1 );
+//WHILE Error Check
+//textFont() has option to combine font declaration with textSize()
+//textFont() is better for more than one PFont Variable
+//
+text( title, stringDivX1, titleDiv1, stringDivWidth1, stringDivHeight1 );
 fill (resetInk);
-
-
-
-
-
-
-rect(titleX, titleY, titleWidth, titleHeight);
-rect(np, npY, npWidth, npHeight);
+// end program
