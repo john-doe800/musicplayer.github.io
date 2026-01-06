@@ -6,7 +6,7 @@
   - Specific Class: https://code.compartmental.net/minim/audioplayer_class_audioplayer.html
   - Specific Class: https://code.compartmental.net/minim/audiometadata_class_audiometadata.html
   
-  ** You are now able to research any Processing-Java Library ... or Any Java Library from the internet **
+  ** You are now able to research any Processing-Java Library ... or Any Java Library from the internet ** 
   - Processing-Java Libraries must be installed into the IDE
   - Java Libraries simply require the 'import' declaration
 */
@@ -18,3 +18,27 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
+//Global Varaibles
+Minim minim; //initates entire class
+int numberOfSongs = 1; //Best Practice
+int numberOfSoundEffects = 1; //Best Practice
+AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
+AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
+int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
+//
+//displaysize(700, 500); //width //height
+//fullScreen(); //displayWidth //displayHeight
+int appWidth = width;
+int appHeight = height;
+//
+//Music Loading - STRUCTURED REVIEW
+minim = new Minim(this);
+String upArrow = "../../../";
+String music = "Music";
+String song1 = "home";
+String fileExtension_mp3 = ".mp3";
+
+playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+//
+println("Did the music and sound load properly?");
+printArray (playList);
