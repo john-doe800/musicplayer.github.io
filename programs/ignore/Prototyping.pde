@@ -20,6 +20,13 @@ float npWidth = appWidth * 1.5/4;
 float npHeight = appHeight * 1/3;
 rect(np, npY, npWidth, npHeight);
 
+//quit button
+float qbX = appWidth * 24/25;
+float qbY = appHeight * 0.01/20;
+float qbWidth = appWidth * 1/25;
+float qbHeight = appHeight * 1/25;
+rect(qbX, qbY, qbWidth, qbHeight);
+
 //title box
 float titleX = appWidth * 3.4/5;
 float titleY = appHeight * 1/15;
