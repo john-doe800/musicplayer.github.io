@@ -1,33 +1,77 @@
-// Hearing Music and Sound Effects
-//
-/* Program Documentation & Notes
- - Libraries add specific functions to ease programming burdon
- - Must add some libraries in the IDE and the code, like Minim
- - Global Varaibles on harddrive used throuhgout the program sections
+/* Creating Buttons
+ - Understanding how the mixing of boilerplate happens
+ - Introducing Booleans to communicate between procedures, 1 bite of information
  
- - Folder Name matches first-tab or MAIN Program
- - setup() executes once, sets up all libraries & variables (and objects at the advanced level)
- - draw() maniuplates variables and how CANVAS looks
- - mousePressed() and keyPressed() are example listeners, interrupts draw(), then continues draw() at that line
- 
- - Once setup() is done, draw() starts looping
- - Can temporarily pause draw() with noLoop() & loop() to wait (behind booleans or interactions)
- - Note: delay() will stop the program for a specified time
- 
- - Reading Code the cursor & braces
- 
+ - Specific Debugging Topics
+ - draw() varaibles initiated in Global Varaibles due to LOOP
+ - MouseX & Y keyVariables
+ - Using println() to test functionality
  */
 //
 //Library - Minim
 //
 //Global Variables
+int appWidth, appHeight;
+float quitDivX, quitDivY, quitDivWidth, quitDivHeight;
+float playDivX, playDivY, playDivWidth, playDivHeight;
+float playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3;
 //
-void setup() {} //End setup
+Boolean playButton=false;
 //
-void draw() {} //End draw
+void setup() {
+  //Display
+  size(500, 400);
+  //fullScreen();
+  appWidth = width;
+  appHeight = height;
+  //
+  //Population
+  quitDivX = appWidth * 9/10;
+  quitDivY = appHeight * 0/10;
+  quitDivWidth = appWidth * 1/10;
+  quitDivHeight = appHeight * 1/10;
+  playDivX = appWidth * 4/10;
+  playDivY = appHeight * 4.5/10;
+  playDivWidth = appWidth * 2/10;
+  playDivHeight = appHeight * 1/10;
+  playSymbolX1 = playDivX + playDivWidth * 1/4;
+  playSymbolY1 = playDivY + playDivHeight * 1/4;
+  playSymbolX2 = playSymbolX1 + playDivWidth * 1/2;
+  playSymbolY2 = playDivY + playDivHeight * 1/2;
+  playSymbolX3 = playSymbolX1;
+  playSymbolY3 = playDivY + playDivHeight * 3/4;
+  //
+  //DIVs
+  rect(quitDivX, quitDivY, quitDivWidth, quitDivHeight);
+  rect(playDivX, playDivY, playDivWidth, playDivHeight);
+  triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
+} //End setup
 //
-void mousePressed() {} //End Mouse Pressed
+void draw() {
+  //println ("My Mouse is", mouseX, mouseY);
+  if ( mouseX>playDivX && mouseX<playDivX+playDivWidth && mouseY>playDivY && mouseY<playDivY+playDivHeight ) {
+    //println("Wahoo! I'm playing you");
+    playButton = true;
+  } else {
+    //print(" ");
+    playButton = false;
+  }//End Introduction of DRAW()
+  //
+  //Button HoverOver
+  //
+} //End draw
 //
-void keyPressed() {} //End Key Pressed 
+void mousePressed() {
+  //Music Play Functions
+  if ( playButton == true ) {
+    println("Play My Song");
+    playButton=false; //reset Boolean for draw()
+  } else {
+    println(" ");
+  }
+} //End Mouse Pressed
+//
+void keyPressed() {
+} //End Key Pressed
 //
 //End MAIN Program

@@ -8,7 +8,7 @@
  - Using println() to test functionality
  
  - What to copy and paste
- - Quit & Play DIV
+ - Quit & Play box
  
  
  CONTINUE HERE
@@ -30,6 +30,10 @@ float playboxx, playboxy, playboxWidth, playboxHeight;
 float playSymbolx1, playSymboly1, playSymbolx2, playSymboly2, playSymbolx3, playSymboly3;
 //
 Boolean playButton=false;
+//
+color resetBackground, resetInk;
+color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
+color quitBackground, quitBackgroundActivated;
 //
 void setup() {
   //Display
@@ -61,6 +65,8 @@ triangle(playSymbolx1, playSymboly1, playSymbolx2, playSymboly2, playSymbolx3, p
 //colour population
 color black = 0;
 color white = 255;
+color grayscale = 256/2;
+color gray = #898989;
 //CANVAS: default background and ink
 resetBackground = white;
 resetInk = black;
@@ -73,42 +79,46 @@ color lightb = #F6E4BC;
   playColorSymbol = dyellow ;
   playColorBackgroundActivated = lightb;
   playColorSymbolActivated = lightb;
+    quitBackground = obrown;
+  quitBackgroundActivated = lightb;
 
 }
 void draw() {
-  //println ("My Mouse is", mousex, mousey);
   if ( mousex>playboxx && mousex<playboxx+playboxWidth && mousey>playboxy && mousey<playboxy+playboxHeight ) {
     //println("Wahoo! I'm playing you");
     playButton = true;
-    //fill();
+    fill(playColourBackgroundActivated);
     rect(playboxx, playboxy, playboxWidth, playboxHeight);
-    //fill();
+    fill(playColourSymbolActivated);
     triangle(playSymbolx1, playSymboly1, playSymbolx2, playSymboly2, playSymbolx3, playSymboly3);
-    //fill();
+    fill(resetBackground);
   } else {
     //print(" ");
     playButton = false;
-    fill();
+    fill(playColourBackground);
     rect(playboxx, playboxy, playboxWidth, playboxHeight);
-    fill();
+    fill(playColourSymbol);
     triangle(playSymbolx1, playSymboly1, playSymbolx2, playSymboly2, playSymbolx3, playSymboly3);
-    fill();
-  }//End Introduction of DRAW()
+    fill(resetBackground);
+  }//End Play Button Hover Over
+  if ( mousex>qbx && mousex<qbx+qbWidth && mousey>qby &&mousey<qby+qbHeight ) {
+    fill(quitBackgroundActivated);
+    rect(qbx, qby, qbWidth, qbHeight);
+    fill(resetBackground);
+  } else {
+    fill(quitBackground);
+    rect(qbx, qby, qbWidth, qbHeight);
+    fill(resetBackground);
+  }//End Quit Button Hover Over
   //
 } //End draw
-//
 void mousePressed() {
   //Music Play Functions
   if ( playButton == true ) {
     println("Play My Song");
+    playButton=false; //reset Boolean for draw()
   } else {
-    //println(" ");
-    playButton = false;
-    fill(playColorBackground);
-    rect(playboxx, playboxy, playboxWidth, playboxHeight);
-    fill(playColorSymbol);
-    triangle(playSymbolx1, playSymboly1, playSymbolx2, playSymboly2, playSymbolx3, playSymboly3);
-    fill(resetBackground);
+    println(" ");
   }
 } //End Mouse Pressed
 //
