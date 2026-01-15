@@ -60,13 +60,11 @@ triangle(playSymbolx1, playSymboly1, playSymbolx2, playSymboly2, playSymbolx3, p
 //
 //colour population
 color black = 0;
-color white = 0;
+color white = 255;
 //CANVAS: default background and ink
 resetBackground = white;
 resetInk = black;
 //button colors
-color
-
 color yellow = #B79412;
 color lyellow = #FAE597;
 color obrown = #BC841B;
