@@ -27,35 +27,35 @@ void colourPopulation() {
   color white = 255; //Gray Scale
   color grayScale = 256/2; //Example Gray Scale, small memory
   color gray = #B9B9B9; //Example Gray Scale, large memory
-  //CANVAS: default background and ink
+  //CANVAS= default background and ink
   resetBackgroundDay = white;
   resetInkDay = black;
   resetBackgroundNight = 256/4;
   resetInkNight = int(256*0.75); // 3/4 of origoinal, not 1/4
-  //println("Casting answer is:", resetInkNight); //Exactly 192, no rounding invovled, checked on calculator
-  //Button Colours: layering local variables leads to preferences controled by Booleans
-  color SoftCream = #F5EFE6;
-  color HoneyBeige = #D8C3A5;
-  color TerracottaClay = #C46A4A;
-  color MutedOlive = #8A8F5A;
-  color WarmWalnutBrown = #5A3E2B;
+  //println("Casting answer is=", resetInkNight); //Exactly 192, no rounding invovled, checked on calculator
+  //Button Colours= layering local variables leads to preferences controled by Booleans
+color CreamGlow = #FFF4E6;
+color WarmHoney = #F2C57C;
+color Amber = #E28B3A;
+color SoftCaramel = #C46A2D;
+color DarkHoney = #95732D;
   //
-  color CoolMoonlight = #E6EDF2;
-  color FrostedStone = #B8C2CC;
-  color MutedSteelBlue = #5F7D8C;
-  color DesaturatedTeal = #4F6F73;
-  color DeepCharcoal = #2B3338;
-  //Note: able to use a Ternary Operator but ineffiecient
+color NightCream = #2B1F14;
+color DeepHoney = #8F6A2A;
+color DarkAmber = #9E4F1E;
+color BurntCaramel = #7A3C1B;
+color Molasses = #4A2A12;
+  //Note= able to use a Ternary Operator but ineffiecient
    if (nightMode == true ) {
-    resetBackground = WarmWalnutBrown;
-    resetInk = SoftCream;
-    playColourBackground = MutedOlive;
-    playColourSymbol = SoftCream;
-    playColourBackgroundActivated = TerracottaClay;
-    playColourSymbolActivated = SoftCream;
-    quitBackground = MutedOlive;
-    quitBackgroundActivated = TerracottaClay;
-    quitButtonInk = SoftCream;
+    resetBackground = DarkHoney;
+    resetInk = CreamGlow;
+    playColourBackground = SoftCaramel;
+    playColourSymbol = CreamGlow;
+    playColourBackgroundActivated = WarmHoney;
+    playColourSymbolActivated = Amber;
+    quitBackground = SoftCaramel;
+    quitBackgroundActivated = WarmHoney;
+    quitButtonInk = CreamGlow;
   } else {
     resetBackground = CoolMoonlight;
     resetInk = DeepCharcoal;

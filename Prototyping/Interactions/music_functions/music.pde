@@ -1,60 +1,60 @@
 /* Music Subprogram
-*/
+ */
 //
-//Global Variables
-Minim minim; //initates entire class
-int numberOfSongs = 1; //Best Practice
-int numberOfSoundEffects = 1; //Best Practice
-AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
-AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
-int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
-//
- minim = new Minim(this); //Manditory
+// Global Variables
+import ddf.minim.*; // Import Minim library
+Minim minim; // Initiates entire class
+int numberOfSongs = 8; // Best Practice
+int numberOfSoundEffects = 1; // Best Practice
+AudioPlayer[] playList = new AudioPlayer[numberOfSongs];
+AudioPlayer[] soundEffectList = new AudioPlayer[numberOfSoundEffects]; // Renamed to avoid conflict
+int currentSong = 0; // Start at the first song
+
+void musicSetup() {
+  // Music Loading - STRUCTURED Review
+  minim = new Minim(this); // Mandatory
   String upArrow = "../../../";
-  String music = "Music/"; 
-  String SoundEffects = "Sound Effects/";  
+  String music = "Music/";
+  String soundEffectsFolder = "Sound Effects/"; // Renamed to avoid conflict
   //
-    String[] song = new String[numberOfSongs]
-    song(0) = "Home";
-    song(1) = "Undertale";
-    song(2) = "Waterfall";
-   //
+  String[] song = new String[numberOfSongs];
+  song[0] = "Home";
+  song[1] = "Undertale";
+  song[2] = "Waterfall";
+  // Add more songs as needed
+  //
   String soundEffect1 = "ClickSoundEffect2";
   String fileExtension_mp3 = ".mp3";
   //
-  String musicDirectory = upArrow + musicFolder + normalFolder; //Concatenation
-  String soundEffectsDirectory = upArrow + musicFolder + soundEffectsFolder;
-  //
-for (int i=0; i<numberOfSong; i++) {
-    file = musicDirectory + songName[i] + fileExtension_mp3;
-    playlist[ currentSong ] = minim.loadFile(file); 
-    currentSong++;
-} // End file Loading
-currentSong=0;
-file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
-soundEffects[currentSong] = minim.loadFile( file );
-//
-for ( int currentSong=0; i<numberOfSongs; i++) {
-  //ERROR Check Music and Sound Effect Variables
-  //Thrown by commenting out FILE, playList[] or soundEffects[]
-  if ( playList[i]==null || soundEffects[currentSong]==null) { //ERROR, play list is NULL
-    //See FILE or minim.loadFile
-    println("The Play List or Sound Effects did not load properly");
-    printArray(playList);
-    printArray(soundEffects);
-    /*
-  println("Music Pathway", musicDirectory);
-     println("Full Music File Pathway", file);
-     */
-  } //End ERROR Check Music and Sound Effect Variables
-} //End File Loading
-//
+  String musicDirectory = upArrow + music; // Concatenation
+  String soundEffectsDirectory = upArrow + soundEffectsFolder;
 
+  // Load songs into playList
+  for (int i = 0; i < numberOfSongs; i++) {
+    String file = musicDirectory + song[i] + fileExtension_mp3; // Corrected variable name
+    playList[i] = minim.loadFile(file); // Load each song into the playlist
+    if (playList[i] == null) {
+      println("Error loading song: " + file);
+    }
+  }
 
+  // Load sound effects
+  String file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3; // Rewriting FILE
+  soundEffectList[0] = minim.loadFile(file); // Load sound effect
+  if (soundEffectList[0] == null) {
+    println("Error loading sound effect: " + file);
+  }
 
+  // Error Check Music and Sound Effect Variables
+  for (int i = 0; i < numberOfSongs; i++) {
+    if (playList[i] == null) { // Check if any song failed to load
+      println("The Play List did not load properly");
+      printArray(playList);
+    }
+  }
 
-
-
-// End Music Subprogram
-
-// End Music Subprogram
+  if (soundEffectList[0] == null) { // Check if sound effect failed to load
+    println("The Sound Effects did not load properly");
+    printArray(soundEffectList);
+  }
+}
