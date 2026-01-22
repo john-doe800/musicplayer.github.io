@@ -34,14 +34,14 @@ void colourPopulation() {
   resetInkNight = int(256*0.75); // 3/4 of origoinal, not 1/4
   //println("Casting answer is=", resetInkNight); //Exactly 192, no rounding invovled, checked on calculator
   //Button Colours= layering local variables leads to preferences controled by Booleans
-color CreamGlow = #FFF4E6;
+color CreamGlow = #F2DECD;
 color WarmHoney = #F2C57C;
 color Amber = #E28B3A;
 color SoftCaramel = #C46A2D;
 color DarkHoney = #95732D;
   //
-color NightCream = #2B1F14;
-color DeepHoney = #8F6A2A;
+color NightCream = #EDC7A8;
+color DeepHoney = #BC7841;
 color DarkAmber = #9E4F1E;
 color BurntCaramel = #7A3C1B;
 color Molasses = #4A2A12;
@@ -57,15 +57,14 @@ color Molasses = #4A2A12;
     quitBackgroundActivated = WarmHoney;
     quitButtonInk = CreamGlow;
   } else {
-    resetBackground = CoolMoonlight;
-    resetInk = DeepCharcoal;
-    playColourBackground = FrostedStone;
-    playColourSymbol = DeepCharcoal;
-    playColourBackgroundActivated = MutedSteelBlue;
-    playColourSymbolActivated = CoolMoonlight;
-    quitBackground = FrostedStone;
-    quitBackgroundActivated = MutedSteelBlue;
-    quitButtonInk = CoolMoonlight;
+    resetInk = CreamGlow;
+    playColourBackground = BurntCaramel;
+    playColourSymbol = NightCream;
+    playColourBackgroundActivated = DarkAmber;
+    playColourSymbolActivated = Molasses;
+    quitBackground = BurntCaramel;
+    quitBackgroundActivated = NightCream;
+    quitButtonInk = CreamGlow;
   } //End Night Mode Colors
 } //End Colour Population
 //
