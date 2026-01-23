@@ -15,9 +15,9 @@ import ddf.minim.ugens.*;
 //Global Variables
 //All Global Variables execute first ... A global Variable is a Global Variable
 int appWidth, appHeight;
-float quitDivX, quitDivY, quitDivWidth, quitDivHeight;
-float playDivX, playDivY, playDivWidth, playDivHeight;
-float playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3;
+float qbX, qbY, qbWidth, qbHeight;
+float playdivX, playdivY, playdivWidth, playdivHeight;
+float playsymbolX1, playsymbolY1, playsymbolX2, playsymbolY2, playsymbolX3, playsymbolY3;
 //
 Boolean playButton=false, quitButton=false;
 //
@@ -60,7 +60,7 @@ void draw() {
 void mousePressed() {
   //Quit Button: does not use Boolean, only mouseX&Y already present in system key variables
   //CAUTION: must use if-elseIf-else or Clickable Screen will get confused
-  if ( mouseX>quitDivX && mouseX<quitDivX+quitDivWidth && mouseY>quitDivY &&mouseY<quitDivY+quitDivHeight ) {
+  if ( mouseX>qbX && mouseX<qbX+qbWidth && mouseY>qbY &&mouseY<qbY+qbHeight ) {
     quitButton(); //See Below
   }
 } //End Mouse Pressed

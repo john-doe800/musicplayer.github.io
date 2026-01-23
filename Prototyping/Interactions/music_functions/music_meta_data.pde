@@ -1,4 +1,3 @@
-
 /* Text - Dynamic Strings and MetaData
  What is available from Minim Documentation, 20250421
  - https://code.compartmental.net/minim/audiometadata_class_audiometadata.html
@@ -19,8 +18,10 @@
  Publisher: meta.publisher()
  Encoded: meta.encoded()
  */
-//Global Variable
-AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
+//
+void metaDataFileLoading() { //See Music / FOR / playList[ currentSong ] = minim.loadFile( file )
+  playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
+} //End Meta Data File Loading
 //
 void testMetaData() {
   //Print What is available on a particular song
@@ -28,6 +29,7 @@ void testMetaData() {
   println();
   println( "File Name: " + playListMetaData[currentSong].fileName() );
   println( "Length (in milliseconds): " + playListMetaData[currentSong].length() );
+  println( "Length (in seconds): " + ( playListMetaData[currentSong].length() )/1000 );
   println( "Title: " + playListMetaData[currentSong].title() );
   println( "Author: " + playListMetaData[currentSong].author() );
   println( "Album: " + playListMetaData[currentSong].album() );
@@ -44,4 +46,16 @@ void testMetaData() {
   println( "Encoded: " + playListMetaData[currentSong].encoded() );
 } //End Test Meta Data
 //
+void saveSongTitle() {
+  //See draw()
+  //Note: See Music Loading if NULL
+  if ( playList[currentSong].isPlaying() == true) {
+    //titleDIV();
+    songTitle = playListMetaData[currentSong].title(); //Used to switch titles in draw()
+    //println("Check VAR currentSongFileName", currentSongFileName);
+  } else {
+    //titleDIV();
+    songTitle = "Nothing Playing Yet!";
+  }
+} //End Print Song Title in draw()
 //End Subprogram Music Meta Data

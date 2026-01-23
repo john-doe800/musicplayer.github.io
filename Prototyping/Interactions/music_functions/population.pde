@@ -5,22 +5,22 @@
  */
 //
 void divPopulation() {
-  quitDivX = appWidth * 24/25;
-  quitDivY = appHeight * 0;
-  quitDivWidth = appWidth * 1/25;
-  quitDivHeight = appHeight * 1/25;
+  qbX = appWidth * 24/25;
+  qbY = appHeight * 0;
+  qbWidth = appWidth * 1/25;
+  qbHeight = appHeight * 1/25;
   //
-  playDivX = appWidth * 14/27.5;
-  playDivY = appHeight * 3.5/4;
-  playDivWidth = appWidth * 1/15;
-  playDivHeight = appHeight * 1/10;
+  playdivX = appWidth * 14/27.5;
+  playdivY = appHeight * 3.5/4;
+  playdivWidth = appWidth * 1/15;
+  playdivHeight = appHeight * 1/10;
   //
-  playSymbolX1 = playDivX + playDivWidth * 1/4;
-  playSymbolY1 = playDivY + playDivHeight * 1/4;
-  playSymbolX2 = playSymbolX1 + playDivWidth * 1/2;
-  playSymbolY2 = playDivY + playDivHeight * 1/2;
-  playSymbolX3 = playSymbolX1;
-  playSymbolY3 = playDivY + playDivHeight * 3/4;
+  playsymbolX1 = playdivX + playdivWidth * 1/4;
+  playsymbolY1 = playdivY + playdivHeight * 1/4;
+  playsymbolX2 = playsymbolX1 + playdivWidth * 1/2;
+  playsymbolY2 = playdivY + playdivHeight * 1/2;
+  playsymbolX3 = playsymbolX1;
+  playsymbolY3 = playdivY + playdivHeight * 3/4;
 } //End DIV Population
 void colourPopulation() {
   color black = 0; //Gray Scale, much smaller color, 256 bits

@@ -13,28 +13,28 @@ void quitButton() {
 }//End Quit Button
 //
 void DIVs() {
-  quitDIV();
-  playDIV();
+  qb();
+  playdiv();
 } //End DIVs
 //
-void quitDIV() {
-  rect(quitDivX, quitDivY, quitDivWidth, quitDivHeight);
+void qb() {
+  rect(qbX, qbY, qbWidth, qbHeight);
 } // End Quit Button DIV
 //
-void playDIV() {
-  rect(playDivX, playDivY, playDivWidth, playDivHeight);
+void playdiv() {
+  rect(playdivX, playdivY, playdivWidth, playdivHeight);
 } // End Plauy Button DIV
 void playButtonSymbol() {
-  triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
+  triangle(playsymbolX1, playsymbolY1, playsymbolX2, playsymbolY2, playsymbolX3, playsymbolY3);
 } //End Play Button Symbol
 
 void musicButtonShapes() {
-  triangle(playSymbolX1, playSymbolY1, playSymbolX2, playSymbolY2, playSymbolX3, playSymbolY3);
+  triangle(playsymbolX1, playsymbolY1, playsymbolX2, playsymbolY2, playsymbolX3, playsymbolY3);
 } // End Msuic Button Shapes
 //
 void quitButtonActive() {
   fill(quitBackgroundActivated);
-  quitDIV();
+  qb();
   fill(resetBackground);
   fill(quitButtonInk);
   easyTextQuitButton();
@@ -43,7 +43,7 @@ void quitButtonActive() {
 //
 void quitButtonRegular() {
   fill(quitBackground);
-  quitDIV();
+  qb();
   fill(resetBackground);
   fill(quitButtonInk);
   easyTextQuitButton();
@@ -52,7 +52,7 @@ void quitButtonRegular() {
 //
 void playButtonActive() {
   fill(playColourBackgroundActivated);
-  playDIV();
+  playdiv();
   fill(playColourSymbolActivated);
   playButtonSymbol();
   fill(resetBackground);
@@ -60,7 +60,7 @@ void playButtonActive() {
 //
 void playButtonReady() {
   fill(playColourBackground);
-  playDIV();
+  playdiv();
   fill(playColourSymbol);
   playButtonSymbol();
   fill(resetBackground);
@@ -68,12 +68,12 @@ void playButtonReady() {
 //
 void hoverOver_draw() {
   //Button HoverOver
-  if ( mouseX>quitDivX && mouseX<quitDivX+quitDivWidth && mouseY>quitDivY &&mouseY<quitDivY+quitDivHeight ) {
+  if ( mouseX>qbX && mouseX<qbX+qbWidth && mouseY>qbY &&mouseY<qbY+qbHeight ) {
     quitButtonActive();
   } else {
     quitButtonRegular();
   }//End Quit Button Hover Over
-  if ( mouseX>playDivX && mouseX<playDivX+playDivWidth && mouseY>playDivY && mouseY<playDivY+playDivHeight ) {
+  if ( mouseX>playdivX && mouseX<playdivX+playdivWidth && mouseY>playdivY && mouseY<playdivY+playdivHeight ) {
     if ( playButton == false ) playButtonActive();
   } else {
     //Order of below creates optical illusion - switching colours
