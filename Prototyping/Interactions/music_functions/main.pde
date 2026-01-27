@@ -14,6 +14,16 @@ color playColourBackground, playColourSymbol, playColourBackgroundActivated, pla
 color quitBackground, quitBackgroundActivated;
 color titleInk;
 color purpleInk;
+color ffBackground, ffSymbol;
+color nextBackground, nextSymbol;
+color prevBackground, prevSymbol;
+color rewindBackground, rewindSymbol;
+//
+color ffBackgroundActivated, ffSymbolActivated;
+color nextBackgroundActivated, nextSymbolActivated;
+color prevBackgroundActivated, prevSymbolActivated;
+color rewindBackgroundActivated, rewindSymbolActivated;
+
 Boolean nightMode=false;
 //
 Minim minim; //initates entire class
