@@ -13,7 +13,6 @@ color quitButtonInk;
 color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
 color quitBackground, quitBackgroundActivated;
 color titleInk;
-color purpleInk;
 color ffBackground, ffSymbol;
 color nextBackground, nextSymbol;
 color prevBackground, prevSymbol;
@@ -27,7 +26,7 @@ color rewindBackgroundActivated, rewindSymbolActivated;
 Boolean nightMode=false;
 //
 Minim minim; //initates entire class
-int numberOfSongs = 8; //Best Practice
+int numberOfSongs = 3; //Best Practice
 int numberOfSoundEffects = 1; //Best Practice
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
