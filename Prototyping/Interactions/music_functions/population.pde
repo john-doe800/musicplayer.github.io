@@ -145,5 +145,4 @@ void colourPopulation() {
     ffBackgroundActivated = WarmHoney;
     ffSymbolActivated = SoftCaramel;
   }
-}
 } // End divPopulation
