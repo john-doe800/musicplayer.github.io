@@ -48,7 +48,7 @@ void musicSetup() {
     } //End ERROR Check Music and Sound Effect Variables
   } //End File Loading
   //
-} //End Music Setup
+//End Music Setup
 //
 void musicFunctionsKeyPressed() {
   //if ( key=='P' || key=='p' ) playList[currentSong].play(); //Simple Play, no double tap possible
@@ -71,7 +71,6 @@ void musicFunctionsKeyPressed() {
     } else {
       playList[currentSong].rewind(); //double tap
     }
-  }
   if ( key=='L' || key=='l' ) playList[currentSong].loop(1); // Loop ONCE: Plays, then plays again, then stops & rewinds
   if ( key=='K' || key=='k' ) playList[currentSong].loop(); // Loop Infinitely //Parameter: BLANK or -1
   if ( key=='F' || key=='f' ) playList[currentSong].skip( 10000 ); // Fast Forward, Rewind, & Play Again //Parameter: milliseconds
@@ -111,7 +110,7 @@ void musicFunctionsKeyPressed() {
       // NEXT will not automatically play the song
       //song[currentSong].play();
     }
-  }
+  
   //if ( key=='B' || key=='b' ) ; // Previous, Back //Students to finish
   //
   if ( key=='Y' || key=='y' ) currentSong = int(random(numberOfSongs)); //random(0, numberOfSongs)
