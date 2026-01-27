@@ -85,7 +85,5 @@ void hoverOver_draw() {
     playButtonReady();
     if ( playButton == true ) playButtonActive();
   }//End Play Button Hover Over
-  //
-} //End Hoverover, draw()
 //
 //End Buttons Subprogram
