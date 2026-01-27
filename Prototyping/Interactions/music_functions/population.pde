@@ -57,4 +57,93 @@ void divPopulation() {
   stringdivWidth = appWidth * 140 / 279;
   stringdivHeight = appHeight * 22 / 216;
 
+void colourPopulation() {
+  // warm color palette
+  color CreamGlow = #F2DECD;
+  color WarmHoney = #F2C57C;
+  color Amber = #E28B3A;
+  color SoftCaramel = #C46A2D;
+  color DarkHoney = #95732D;
+
+  if (nightMode == true) {
+
+    resetBackground = DarkHoney;
+    resetInk = CreamGlow;
+
+    // play
+    playColourBackground = SoftCaramel;
+    playColourSymbol = CreamGlow;
+    playColourBackgroundActivated = WarmHoney;
+    playColourSymbolActivated = Amber;
+
+    // quit
+    quitBackground = SoftCaramel;
+    quitBackgroundActivated = WarmHoney;
+    quitButtonInk = CreamGlow;
+
+    // rewind
+    rewindBackground = SoftCaramel;
+    rewindSymbol = CreamGlow;
+    rewindBackgroundActivated = WarmHoney;
+    rewindSymbolActivated = Amber;
+
+    // previous
+    prevBackground = SoftCaramel;
+    prevSymbol = CreamGlow;
+    prevBackgroundActivated = WarmHoney;
+    prevSymbolActivated = Amber;
+
+    // next
+    nextBackground = SoftCaramel;
+    nextSymbol = CreamGlow;
+    nextBackgroundActivated = WarmHoney;
+    nextSymbolActivated = Amber;
+
+    // fast forward
+    ffBackground = SoftCaramel;
+    ffSymbol = CreamGlow;
+    ffBackgroundActivated = WarmHoney;
+    ffSymbolActivated = Amber;
+
+  } else {
+
+    resetBackground = CreamGlow;
+    resetInk = DarkHoney;
+
+    // play
+    playColourBackground = Amber;
+    playColourSymbol = DarkHoney;
+    playColourBackgroundActivated = WarmHoney;
+    playColourSymbolActivated = SoftCaramel;
+
+    // quit
+    quitBackground = Amber;
+    quitBackgroundActivated = WarmHoney;
+    quitButtonInk = DarkHoney;
+
+    // rewind
+    rewindBackground = Amber;
+    rewindSymbol = DarkHoney;
+    rewindBackgroundActivated = WarmHoney;
+    rewindSymbolActivated = SoftCaramel;
+
+    // previous
+    prevBackground = Amber;
+    prevSymbol = DarkHoney;
+    prevBackgroundActivated = WarmHoney;
+    prevSymbolActivated = SoftCaramel;
+
+    // next
+    nextBackground = Amber;
+    nextSymbol = DarkHoney;
+    nextBackgroundActivated = WarmHoney;
+    nextSymbolActivated = SoftCaramel;
+
+    // fast forward
+    ffBackground = Amber;
+    ffSymbol = DarkHoney;
+    ffBackgroundActivated = WarmHoney;
+    ffSymbolActivated = SoftCaramel;
+  }
+}
 } // End divPopulation
