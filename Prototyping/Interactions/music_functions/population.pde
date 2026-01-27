@@ -51,7 +51,7 @@ void divPopulation() {
   playsymbolY3 = playdivY + playdivHeight * 3 / 4;
 
 
-  // TITLE bar
+  // title bar
   stringdivX = appWidth * 70 / 279;
   stringdivY = appHeight * 22 / 216;
   stringdivWidth = appWidth * 140 / 279;
