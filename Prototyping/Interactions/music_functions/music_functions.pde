@@ -40,8 +40,7 @@ void mousePressed() {
   //Quit Button: does not use Boolean, only mouseX&Y already present in system key variables
   //CAUTION: must use if-elseIf-else or Clickable Screen will get confused
   if ( mouseX>quitdivX && mouseX<quitdivX+quitdivWidth && mouseY>quitdivY &&mouseY<quitdivY+quitdivHeight ) {
-    quitButton(); //See Below
-  }
+    quitButton(); 
 } //End Mouse Pressed
 //
 void keyPressed() {
