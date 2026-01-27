@@ -1,37 +1,65 @@
+//Library - Minim
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
-
-// Global Variables
-Minim minim;
-int numberOfSongs = 3;
-int numberOfSoundEffects = 1;
-
-AudioPlayer[] playList = new AudioPlayer[numberOfSongs];
-AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs];
-AudioPlayer[] soundEffectList = new AudioPlayer[numberOfSoundEffects];
-
-int currentSong = 0;
-String songTitle = "Nothing Playing Yet!";
-
+//
+//Global Variables
+//All Global Variables execute first ... A global Variable is a Global Variable
 void setup() {
-  size(800, 600); // Set canvas size
-  minim = new Minim(this); // Initialize Minim
-  musicSetup(); // Call the music setup function
-}
-
+  //Display CANVAS
+  //size(); //width //height
+  fullScreen(); //displayWidth //displayHeight
+  appWidth = displayWidth;
+  appHeight = displayHeight;
+  //
+  divPopulation();
+  divs(); //See Buttons
+  musicButtonShapes();
+  nightMode=false; //initialization in setup() only
+  colourPopulation();
+  musicSetup();
+  textSetup();
+  testMetaData(); //Note: println only
+  //
+} //End setup
+//
 void draw() {
-  background(50); // Set background color
-  fill(255);
-  textAlign(CENTER, CENTER);
-  textSize(20);
-  text("Press P to Play, N for Next, S to Stop, Y for Random", width / 2, height / 2 - 50);
-  text("Current Song: " + songTitle, width / 2, height / 2);
-}
-
+  //println ("My Mouse is", mouseX, mouseY);
+  //println (playButton);
+  hoverOver_draw(); //See Buttons
+  //
+  saveSongTitle(); //See Music Meta Data
+  drawText();
+  //
+} //End draw
+//
+void mousePressed() {
+  //Quit Button: does not use Boolean, only mouseX&Y already present in system key variables
+  //CAUTION: must use if-elseIf-else or Clickable Screen will get confused
+  if ( mouseX>quitdivX && mouseX<quitdivX+quitdivWidth && mouseY>quitdivY &&mouseY<quitdivY+quitdivHeight ) {
+    quitButton(); //See Below
+  }
+} //End Mouse Pressed
+//
 void keyPressed() {
-  musicFunctionsKeyPressed(); // Handle music key presses
-}
+  //Note, CAPs Lock on Code: key=='[CAP]' || key=='[lowerCase]'
+  //Note: if ( key==CODED || keyCode==SpecialKey ) ; //Special Keys abriviated CAPS
+  //CAUTION: Order Matters
+  if (key=='Q' || key=='q') {
+    quitButton();  //See Below
+  } //Quit Button
+  if (key=='D' || key=='d') {
+    if ( nightMode == false ) {
+      nightMode = true;
+    } else {
+      nightMode = false;
+    }
+    colourPopulation();
+  } //Night Mode
+  //
+  musicFunctionsKeyPressed(); //See Music
+} //End Key Pressed
+//End Music Functions
